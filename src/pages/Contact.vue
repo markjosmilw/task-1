@@ -20,9 +20,9 @@ const fillAgain = () => {
     </div>
     <form class="formContact" v-if="!formSubmitted">
         <label>What is email address?</label>
-        <input type="text" v-model="email" />
+        <input type="email" v-model="email" />
         <label>What is you phone number?</label>
-        <input type="text" v-model="phone" />
+        <input type="number" v-model="phone" />
         <input type="submit" @click.prevent="formSubmitted = !formSubmitted" />
     </form>
     <div v-if="formSubmitted">
