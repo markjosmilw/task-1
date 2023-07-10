@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import '../styles/Home.scss'
+
 
 const name = ref('')
 const age = ref('')
@@ -17,22 +17,30 @@ const fillAgain = () => {
 </script>
 
 <template>
-    <div>
+    <div class="test">
         <h2>Home</h2>
-        <p>This is the hompage</p>
+        <br />
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, esse. Odio assumenda iste reprehenderit,
+            rerum laboriosam labore fugit atque voluptatem ullam molestias, dolores eos possimus facere, a eligendi hic
+            repudiandae minima totam dolorum aperiam voluptate! Perspiciatis et nobis repellendus! Maiores ducimus libero
+            quam possimus cum fugiat consequuntur recusandae adipisci nesciunt vero perferendis modi corporis sequi suscipit
+            ipsa pariatur nulla, sint asperiores temporibus illo saepe id alias. Accusamus mollitia saepe enim, aperiam
+            provident temporibus debitis illo reiciendis nam repellendus quas nobis!</p>
+        <br />
     </div>
-    <button type="submit" @click.prevent="openDy = !openDy">{{!openDy?'Open this':'Close'}}</button>
-    <div v-if="openDy">
-        <form v-if="!formSubmitted">
+    <button type="submit" :class="{ redButton: openDy }" @click.prevent="openDy = !openDy">{{ !openDy ? 'Open' : 'Close'
+    }}</button>
+    <div v-if="openDy" class="parentOF">
+        <form v-if="!formSubmitted" class="openForm">
             <label>What is your name?</label>
-            <input v-model="name" />
+            <input type="text" v-model="name" />
             <label>How old are you?</label>
             <input type="number" v-model="age" />
             <label>Where do you live?</label>
-            <input v-model="loc" />
+            <input type="text" v-model="loc" />
             <input type="submit" @click.prevent="formSubmitted = !formSubmitted" />
         </form>
-        <div v-if="formSubmitted">
+        <div v-if="formSubmitted" class="closeForm">
             <p>Hello my name is {{ name }}. I am {{ age }} years old. I live in {{ loc }}</p>
             <input type="submit" value="Fill again" @click.prevent="fillAgain" />
         </div>
