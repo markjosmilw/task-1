@@ -41,7 +41,7 @@ const fillAgain = () => {
             <input type="submit" @click.prevent="formSubmitted = !formSubmitted" />
         </form>
         <div v-if="formSubmitted" class="closeForm">
-            <p>Hello my name is {{ name }}. I am {{ age }} years old. I live in {{ loc }}</p>
+            <p>Hello there {{ name }}. Your age is {{ age }}. You live in {{ loc }}</p>
             <input type="submit" value="Fill again" @click.prevent="fillAgain" />
         </div>
     </div>
