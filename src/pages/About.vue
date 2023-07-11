@@ -1,5 +1,4 @@
 <script>
-import '../styles/About.scss'
 </script>
 
 <template>
